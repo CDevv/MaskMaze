@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0q0ptbf25kcs"]
+
+[ext_resource type="Script" uid="uid://lj6d0xa7d7ku" path="res://prefabs/Mask.cs" id="1_tookm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1270i"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nnpcs"]
+
+[node name="Mask" type="Area3D" unique_id=2011242650]
+script = ExtResource("1_tookm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1214671598]
+transform = Transform3D(1, 0, 0, 0, -1.8626451e-09, -1, 0, -0.100000024, 0, 0, 0, 0)
+shape = SubResource("CylinderShape3D_1270i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=936526711]
+mesh = SubResource("CylinderMesh_nnpcs")
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]

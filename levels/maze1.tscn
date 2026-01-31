@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://brkg0g4a1fcd7"]
+
+[ext_resource type="PackedScene" uid="uid://b6ycga35wthrk" path="res://prefabs/maze.tscn" id="1_ll3ey"]
+[ext_resource type="PackedScene" uid="uid://xu8qx1onk45r" path="res://prefabs/static_wall.tscn" id="2_rgp34"]
+[ext_resource type="PackedScene" uid="uid://0q0ptbf25kcs" path="res://prefabs/mask.tscn" id="3_3vc1l"]
+[ext_resource type="PackedScene" uid="uid://dqud78hd7ptsd" path="res://prefabs/mask_platform.tscn" id="4_qjjkf"]
+[ext_resource type="PackedScene" uid="uid://bjr3n8lh48np0" path="res://prefabs/floor.tscn" id="5_4w8hf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jj3l7"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_05vpw"]
+
+[node name="Maze1" unique_id=1313152877 instance=ExtResource("1_ll3ey")]
+
+[node name="Camera" parent="." index="1" unique_id=1700555575]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10.5, 0)
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="2" unique_id=510618768]
+
+[node name="CollisionShape3D" parent="WorldEnvironment/Floor" parent_id_path=PackedInt32Array(1908581345) index="0" unique_id=476521991]
+shape = SubResource("BoxShape3D_jj3l7")
+
+[node name="MeshInstance3D" parent="WorldEnvironment/Floor" parent_id_path=PackedInt32Array(1908581345) index="1" unique_id=1222054849]
+mesh = SubResource("BoxMesh_05vpw")
+
+[node name="Room1" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="2" unique_id=137795451]
+
+[node name="StaticWall" parent="WorldEnvironment/Room1" index="0" unique_id=216091075 instance=ExtResource("2_rgp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 15.039827, 7, 1, 0)
+
+[node name="StaticWall3" parent="WorldEnvironment/Room1" index="1" unique_id=1506044516 instance=ExtResource("2_rgp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 15.039827, -7, 1, 0)
+
+[node name="StaticWall2" parent="WorldEnvironment/Room1" index="2" unique_id=1441172388 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.371139e-08, 0, -15.039827, 0, 1, 0, 1, 0, -6.5741176e-07, 0, 1, 7)
+
+[node name="StaticWall4" parent="WorldEnvironment/Room1" index="3" unique_id=927557713 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.5119486, 0, 1, 0, 0.99999994, 0, -1.9722354e-07, -4.5, 1, -7)
+
+[node name="StaticWall5" parent="WorldEnvironment/Room1" index="4" unique_id=907424881 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.5119486, 0, 1, 0, 0.99999994, 0, -1.9722354e-07, 4.5, 1, -7)
+
+[node name="Room2" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="3" unique_id=1032370764]
+
+[node name="StaticWall6" parent="WorldEnvironment/Room2" index="0" unique_id=1627210457 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.9631433, 0, 1, 0, 0.99999994, 0, -2.169459e-07, -5, 1, -8)
+
+[node name="StaticWall7" parent="WorldEnvironment/Room2" index="1" unique_id=366943199 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.9631433, 0, 1, 0, 0.99999994, 0, -2.169459e-07, 4.9262867, 1, -7.9999995)
+
+[node name="StaticWall10" parent="WorldEnvironment/Room2" index="2" unique_id=410887350 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.9631433, 0, 1, 0, 0.99999994, 0, -2.169459e-07, -4.9999995, 1, -22)
+
+[node name="StaticWall11" parent="WorldEnvironment/Room2" index="3" unique_id=270223640 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.3711385e-08, 0, -4.9631433, 0, 1, 0, 0.99999994, 0, -2.169459e-07, 4.926287, 1, -21.999998)
+
+[node name="StaticWall8" parent="WorldEnvironment/Room2" index="4" unique_id=463485578 instance=ExtResource("2_rgp34")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 5.9557724, 7, 1, -10.5)
+
+[node name="StaticWall9" parent="WorldEnvironment/Room2" index="5" unique_id=1107183382 instance=ExtResource("2_rgp34")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 5.9557724, 7, 1, -19.5)
+
+[node name="Room3" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="4" unique_id=1910708145]
+
+[node name="StaticWall6" parent="WorldEnvironment/Room3" index="0" unique_id=1798260316 instance=ExtResource("2_rgp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 15.039827, 22, 1, -15.039827)
+
+[node name="StaticWall7" parent="WorldEnvironment/Room3" index="1" unique_id=763080893 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.371139e-08, 0, -15.039827, 0, 1, 0, 1, 0, -6.5741176e-07, 14.480086, 1, -22.039827)
+
+[node name="StaticWall8" parent="WorldEnvironment/Room3" index="2" unique_id=52369900 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.371139e-08, 0, -15.039827, 0, 1, 0, 1, 0, -6.5741176e-07, 14.480085, 1, -8.039827)
+
+[node name="Room4" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="5" unique_id=1090448598]
+
+[node name="StaticWall6" parent="WorldEnvironment/Room4" index="0" unique_id=1367648368 instance=ExtResource("2_rgp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 15.039827, 7, 1, -30.079655)
+
+[node name="StaticWall8" parent="WorldEnvironment/Room4" index="1" unique_id=45765646 instance=ExtResource("2_rgp34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 15.039827, -7, 1, -30.079655)
+
+[node name="StaticWall7" parent="WorldEnvironment/Room4" index="2" unique_id=1911654086 instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.371139e-08, 0, -15.039827, 0, 1, 0, 1, 0, -6.5741176e-07, 0, 1, -37.04)
+
+[node name="Mask" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="7" unique_id=2011242650 instance=ExtResource("3_3vc1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
+
+[node name="Mask2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="8" unique_id=1117889300 instance=ExtResource("3_3vc1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -32.5)
+Id = 2
+
+[node name="Mask3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="9" unique_id=557511201 instance=ExtResource("3_3vc1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 1, -21)
+Id = 3
+
+[node name="MaskPlatform" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="10" unique_id=246500870 groups=["plat"] instance=ExtResource("4_qjjkf")]
+transform = Transform3D(4.862, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
+Color = Color(0.45398527, 0.5004397, 0.9667496, 1)
+
+[node name="MaskPlatform3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="11" unique_id=561531208 groups=["plat"] instance=ExtResource("4_qjjkf")]
+transform = Transform3D(4.862, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -22)
+MaskId = 3
+Color = Color(0.41575435, 0.6666158, 0.18525949, 1)
+
+[node name="MaskPlatform2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="12" unique_id=7043032 groups=["plat"] instance=ExtResource("4_qjjkf")]
+transform = Transform3D(-5.664996e-07, 0, 1, 0, 1, 0, -12.96, 0, -4.371139e-08, -7, 1, -15)
+MaskId = 2
+Color = Color(0.9999998, 0.23107365, 0.15893993, 1)
+
+[node name="Floor1" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="13" unique_id=469892674 instance=ExtResource("5_4w8hf")]
+
+[node name="Floor2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="14" unique_id=1545845053 instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="Floor3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="15" unique_id=714158862 instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
+
+[node name="Floor4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="16" unique_id=933945286 instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="Floor5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="17" unique_id=662582206 instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)

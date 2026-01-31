@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dbdkhuo4ar0kg"]
+
+[ext_resource type="Script" uid="uid://dag6qgidu8bmh" path="res://prefabs/Player.cs" id="1_72ieh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fp3wc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_72ieh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_72ieh"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1753073471]
+script = ExtResource("1_72ieh")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=676589078]
+shape = SubResource("SphereShape3D_fp3wc")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1310559408]
+mesh = SubResource("SphereMesh_72ieh")
+
+[node name="PlayerMaskArea" type="Area3D" parent="." unique_id=1686730506]
+
+[node name="AreaCollision" type="CollisionShape3D" parent="PlayerMaskArea" unique_id=1691215717]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_72ieh")
+debug_color = Color(0.88957936, 0.28361443, 0.42675802, 0.41960785)

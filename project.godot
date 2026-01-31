@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MaskMazeGame"
+run/main_scene="uid://brkg0g4a1fcd7"
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*uid://k6b2nfnsjkm5"
+
+[dotnet]
+
+project/assembly_name="MaskMaze"
+
+[global_group]
+
+platforms="Mask platforms"
+
+[layer_names]
+
+3d_physics/layer_1="mask"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
