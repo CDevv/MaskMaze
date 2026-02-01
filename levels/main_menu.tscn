@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bwrbgye4bb0fk"]
+
+[ext_resource type="Script" uid="uid://cdqd75l34w0rm" path="res://levels/MainMenu.cs" id="1_0ettg"]
+[ext_resource type="PackedScene" uid="uid://djcl7hbg7jf87" path="res://levels/maze1.tscn" id="2_duh7t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_spmat"]
+font_size = 32
+
+[node name="Control" type="Control" unique_id=811162368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ettg")
+Scene = ExtResource("2_duh7t")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=967417515]
+
+[node name="PlayButton" type="Button" parent="UI" unique_id=863587504]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -24.0
+offset_right = 100.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Игра"
+
+[node name="Title" type="Label" parent="UI" unique_id=1959276958]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_top = 88.0
+offset_right = 300.0
+offset_bottom = 216.0
+grow_horizontal = 2
+text = "Масков лабиринт"
+label_settings = SubResource("LabelSettings_spmat")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="UI/PlayButton" to="." method="OnPlayButtonPressed"]

@@ -5,6 +5,7 @@ public partial class MaskToggleBlock : StaticBody3D
 {
 	[Export] public int MaskId { get; set; } = 1;
 	[Export] public Color Color { get; set; } = Colors.White;
+	[Export] public bool Transparency { get; set; } = false;
 	public CollisionShape3D Collision { get; private set; }
 	public MeshInstance3D Mesh { get; private set; }
 	
@@ -38,12 +39,30 @@ public partial class MaskToggleBlock : StaticBody3D
 	private void Enable()
 	{
 		Collision.Disabled = false;
-		Mesh.Visible = true;
+		if (Transparency)
+		{
+			Color newColor = this.Color;
+			newColor.A = 255.0f;
+			Mesh.Mesh.Get(BoxMesh.PropertyName.Material).As<StandardMaterial3D>().Set(StandardMaterial3D.PropertyName.AlbedoColor, Color);
+		}
+		else
+		{
+			Mesh.Visible = true;
+		}
 	}
 
 	private void Disable()
 	{
 		Collision.Disabled = true;
-		Mesh.Visible = false;
+		if (Transparency)
+		{
+			Color newColor = this.Color;
+			newColor.A = 0.5f;
+			Mesh.Mesh.Get(BoxMesh.PropertyName.Material).As<StandardMaterial3D>().Set(StandardMaterial3D.PropertyName.AlbedoColor, newColor);
+		}
+		else
+		{
+			Mesh.Visible = false;
+		}
 	}
 }

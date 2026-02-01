@@ -51,4 +51,10 @@ public partial class MaskPlatform : StaticBody3D
 		Collision.Disabled = true;
 		Mesh.Visible = false;
 	}
+
+	private new void Show()
+	{
+		Collision.Disabled = false;
+		Mesh.Visible = true;
+	}
 }

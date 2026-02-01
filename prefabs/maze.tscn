@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b6ycga35wthrk"]
 
-[ext_resource type="Script" uid="uid://biybpkmgje20j" path="res://Maze.cs" id="1_jj3l7"]
+[ext_resource type="Script" uid="uid://biybpkmgje20j" path="res://prefabs/Maze.cs" id="1_jj3l7"]
 [ext_resource type="PackedScene" uid="uid://dbdkhuo4ar0kg" path="res://prefabs/player.tscn" id="2_05vpw"]
 [ext_resource type="PackedScene" uid="uid://bl2wulxlpex5h" path="res://prefabs/ui.tscn" id="2_vt813"]
 [ext_resource type="PackedScene" uid="uid://bjr3n8lh48np0" path="res://prefabs/floor.tscn" id="3_o6dax"]
+[ext_resource type="PackedScene" uid="uid://cormf71menwyw" path="res://prefabs/exit.tscn" id="5_kgacr"]
 
 [sub_resource type="Environment" id="Environment_jj3l7"]
 glow_enabled = true
@@ -24,6 +25,9 @@ current = true
 [node name="StartPos" type="Marker3D" parent="." unique_id=1952551819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="EndPos" type="Marker3D" parent="." unique_id=697318922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489800612]
 environment = SubResource("Environment_jj3l7")
 camera_attributes = SubResource("CameraAttributesPractical_jj3l7")
@@ -39,5 +43,6 @@ shadow_enabled = true
 
 [node name="Floor" parent="WorldEnvironment" unique_id=469892674 instance=ExtResource("3_o6dax")]
 
-[node name="Exit" type="StaticBody3D" parent="WorldEnvironment" unique_id=613433320]
+[node name="Exit" parent="WorldEnvironment" unique_id=92727374 instance=ExtResource("5_kgacr")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)

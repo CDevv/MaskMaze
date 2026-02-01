@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d0xxumvdnk5jc"]
 
 [ext_resource type="Script" uid="uid://cjmj3q0jlr311" path="res://prefabs/TrapMask.cs" id="1_b620s"]
-[ext_resource type="Material" uid="uid://xshcq3p0ri4c" path="res://new_standard_material_3d.tres" id="2_ps442"]
+[ext_resource type="Material" uid="uid://xshcq3p0ri4c" path="res://models/new_standard_material_3d.tres" id="2_ps442"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nnpcs"]
 size = Vector3(1, 8.959595, 0.083496094)

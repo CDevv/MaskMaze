@@ -9,162 +9,357 @@
 [ext_resource type="PackedScene" uid="uid://cbnjik4jes38g" path="res://prefabs/capsule_corner.tscn" id="6_l2e55"]
 [ext_resource type="PackedScene" uid="uid://d0xxumvdnk5jc" path="res://prefabs/trap_mask.tscn" id="7_golvy"]
 [ext_resource type="PackedScene" uid="uid://ox0t2y3wg28r" path="res://prefabs/mask_toggle_block.tscn" id="9_yj0kh"]
+[ext_resource type="PackedScene" uid="uid://dcx0hiujq8onj" path="res://prefabs/mask_part_1.tscn" id="10_1xfgt"]
+[ext_resource type="PackedScene" uid="uid://chpayt8vt27lt" path="res://prefabs/mask_part_2.tscn" id="11_yi1v8"]
+[ext_resource type="PackedScene" uid="uid://cvvopr2t6u713" path="res://prefabs/mask_part_3.tscn" id="12_gbe2v"]
 
 [node name="Maze" unique_id=1313152877 instance=ExtResource("1_ll3ey")]
 script = ExtResource("2_jpm47")
 
+[node name="EndPos" parent="." index="4" unique_id=697318922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 2, -17)
+
+[node name="MaskPart2" parent="." index="5" unique_id=1793660219 groups=["blue_mask_active", "masks"] instance=ExtResource("11_yi1v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 43)
+
+[node name="MaskPart3" parent="." index="6" unique_id=560526508 groups=["blue_mask_active", "masks"] instance=ExtResource("12_gbe2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 27)
+
 [node name="Floor" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="2" unique_id=469892674]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 0, 0, 0)
 
-[node name="Floor2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="3" unique_id=881740007 instance=ExtResource("5_4w8hf")]
+[node name="Floor3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="3" unique_id=1009009670 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 0.33, 0, 0, 10)
+
+[node name="Floor2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="4" unique_id=881740007 instance=ExtResource("5_4w8hf")]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 0, 0, -16.5)
 
-[node name="Floor4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="4" unique_id=1476067851 instance=ExtResource("5_4w8hf")]
+[node name="Floor4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="5" unique_id=1476067851 instance=ExtResource("5_4w8hf")]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 0, 0, -33)
 
-[node name="Floor5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="5" unique_id=677490133 instance=ExtResource("5_4w8hf")]
+[node name="Floor5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="6" unique_id=677490133 instance=ExtResource("5_4w8hf")]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 16.5, 0, -33)
 
-[node name="Floor6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="6" unique_id=1181134046 instance=ExtResource("5_4w8hf")]
+[node name="Floor6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="7" unique_id=1181134046 instance=ExtResource("5_4w8hf")]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -16.5, 0, -33)
 
-[node name="StaticWall" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="7" unique_id=216091075 instance=ExtResource("2_rgp34")]
+[node name="StaticWall" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="8" unique_id=216091075 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
 
-[node name="StaticWall5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="8" unique_id=1506778271 instance=ExtResource("2_rgp34")]
+[node name="StaticWall25" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="9" unique_id=117460788 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 25)
+
+[node name="StaticWall40" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="10" unique_id=1069362996 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(16.563875, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 1, 57)
+
+[node name="StaticWall44" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="11" unique_id=485464375 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(16.563875, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 57)
+
+[node name="StaticWall48" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="12" unique_id=41137925 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(11.92599, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1, 41)
+
+[node name="StaticWall27" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="13" unique_id=237646550 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(9.465073, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, 25)
+
+[node name="StaticWall33" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="14" unique_id=562699796 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(8.991818, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 1, 45)
+
+[node name="StaticWall39" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="15" unique_id=2006879412 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(5.679044, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, 50)
+
+[node name="StaticWall45" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="16" unique_id=1820444732 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(10.222279, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 52)
+
+[node name="StaticWall46" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="17" unique_id=1224537401 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(6.1333675, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 46)
+
+[node name="StaticWall31" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="18" unique_id=1889792373 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(9.465073, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, 41)
+
+[node name="StaticWall29" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="19" unique_id=1971477819 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 30)
+
+[node name="StaticWall49" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="20" unique_id=1925197070 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 30)
+
+[node name="StaticWall52" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="21" unique_id=1019612274 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 33.8)
+
+[node name="StaticWall55" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="22" unique_id=2146090671 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 33.8)
+
+[node name="StaticWall56" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="23" unique_id=2009398331 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 37.2)
+
+[node name="StaticWall53" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="24" unique_id=2092433122 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(3.7860289, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 37.8)
+
+[node name="StaticWall50" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="25" unique_id=1729431405 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(1.1358087, 0, 0, 0, 1, 0, 0, 0, 4.5, 1, 1, 27)
+
+[node name="StaticWall57" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="26" unique_id=1453071828 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(1.1358087, 0, 0, 0, 1, 0, 0, 0, 4.5, -4.1, 1, 32)
+
+[node name="StaticWall54" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="27" unique_id=129274566 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(1.1358087, 0, 0, 0, 1, 0, 0, 0, 4.5, 1, 1, 39)
+
+[node name="StaticWall51" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="28" unique_id=1953034406 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(1.1358087, 0, 0, 0, 1, 0, 0, 0, 4.5, 4.7, 1, 32)
+
+[node name="StaticWall5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="29" unique_id=1506778271 instance=ExtResource("2_rgp34")]
 transform = Transform3D(7.0672545, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -24)
 
-[node name="StaticWall9" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="9" unique_id=1415842057 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+[node name="StaticWall9" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="30" unique_id=1415842057 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
 transform = Transform3D(7.0672545, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -8)
 
-[node name="StaticWall22" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="10" unique_id=1757576459 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+[node name="StaticWall22" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="31" unique_id=1757576459 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
 transform = Transform3D(7.0672545, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 8)
 
-[node name="StaticWall6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="11" unique_id=870554085 instance=ExtResource("2_rgp34")]
+[node name="StaticWall6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="32" unique_id=870554085 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -41)
 
-[node name="StaticWall12" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="12" unique_id=291739000 instance=ExtResource("2_rgp34")]
+[node name="StaticWall12" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="33" unique_id=291739000 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, -15.77512, 1, -41)
 
-[node name="StaticWall14" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="13" unique_id=173890769 instance=ExtResource("2_rgp34")]
+[node name="StaticWall14" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="34" unique_id=173890769 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, -15.77512, 1, -25)
 
-[node name="StaticWall15" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="14" unique_id=1343568369 instance=ExtResource("2_rgp34")]
+[node name="StaticWall15" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="35" unique_id=1343568369 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 16.22488, 1, -25)
 
-[node name="StaticWall16" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="15" unique_id=1062810952 instance=ExtResource("2_rgp34")]
+[node name="StaticWall16" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="36" unique_id=1062810952 instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 16.22488, 1, -41)
 
-[node name="StaticWall23" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="16" unique_id=1821360646 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+[node name="StaticWall23" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="37" unique_id=1821360646 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
 transform = Transform3D(15.775121, 0, 0, 0, 1, 0, 0, 0, 1, 16.22488, 1, 25)
 
-[node name="StaticWall2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="17" unique_id=287349836 instance=ExtResource("2_rgp34")]
+[node name="StaticWall2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="38" unique_id=287349836 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, 8, 1, 2.3841858e-07)
 
-[node name="StaticWall3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="18" unique_id=1200762751 instance=ExtResource("2_rgp34")]
+[node name="StaticWall38" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="39" unique_id=1025942835 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -25, 1, 33)
+
+[node name="StaticWall58" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="40" unique_id=316947494 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -25, 1, 16)
+
+[node name="StaticWall42" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="41" unique_id=293473345 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, 8, 1, 33)
+
+[node name="StaticWall43" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="42" unique_id=368594550 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, 8, 1, 49)
+
+[node name="StaticWall41" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="43" unique_id=1523489761 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -25, 1, 49)
+
+[node name="StaticWall3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="44" unique_id=1200762751 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -8, 1, 2.3841858e-07)
 
-[node name="StaticWall4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="19" unique_id=17798747 instance=ExtResource("2_rgp34")]
+[node name="StaticWall4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="45" unique_id=17798747 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -8, 1, -16)
 
-[node name="StaticWall13" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="20" unique_id=576060294 instance=ExtResource("2_rgp34")]
+[node name="StaticWall59" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="46" unique_id=650637828 groups=["green_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -24, 1, -16)
+
+[node name="StaticWall60" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="47" unique_id=1859321159 groups=["green_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -65.7, 1, -16.3)
+
+[node name="StaticWall61" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="48" unique_id=1527042942 groups=["green_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -81.299995, 1, -16.3)
+
+[node name="StaticWall62" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="49" unique_id=1667874772 groups=["green_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(15.775121, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -73.299995, 1, -8.299999)
+
+[node name="StaticWall63" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="50" unique_id=1341250946 groups=["green_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(15.775121, 0, -3.5527137e-15, 0, 1, 0, 0, 0, 1, -73.299995, 1, -24.3)
+
+[node name="StaticWall13" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="51" unique_id=576060294 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, -24, 1, -32.48)
 
-[node name="StaticWall17" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="21" unique_id=538796844 instance=ExtResource("2_rgp34")]
+[node name="StaticWall17" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="52" unique_id=538796844 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-6.895524e-07, 0, -1, 0, 1, 0, 15.775121, 0, -4.371139e-08, 24, 1, -32.48)
 
-[node name="StaticWall19" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="22" unique_id=742439385 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+[node name="StaticWall19" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="53" unique_id=742439385 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
 transform = Transform3D(-7.5850767e-07, 0, -1, 0, 1, 0, 17.352633, 0, -4.371139e-08, 24, 1, -16.48)
 
-[node name="StaticWall20" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="23" unique_id=1722923416 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+[node name="StaticWall20" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="54" unique_id=1722923416 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
 transform = Transform3D(-7.5850767e-07, 0, -1, 0, 1, 0, 17.352633, 0, -4.371139e-08, 24, 1, 16.52)
 
-[node name="StaticWall11" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="24" unique_id=1397568214 instance=ExtResource("2_rgp34")]
+[node name="StaticWall21" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="55" unique_id=2085033280 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-5.233704e-07, 0, -0.99999994, 0, 1, 0, 11.973318, 0, -4.3711385e-08, 8, 1, 14.52)
+
+[node name="StaticWall24" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="56" unique_id=728982267 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.323494e-07, 0, -0.99999994, 0, 1, 0, 9.891002, 0, -4.3711385e-08, -8, 1, 19.52)
+
+[node name="StaticWall26" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="57" unique_id=332498164 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.323494e-07, 0, -0.99999994, 0, 1, 0, 9.891002, 0, -4.3711385e-08, -8, 1, 30.52)
+
+[node name="StaticWall28" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="58" unique_id=1022171519 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.323494e-07, 0, -0.99999994, 0, 1, 0, 9.891002, 0, -4.3711385e-08, -15, 1, 30.52)
+
+[node name="StaticWall36" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="59" unique_id=847001100 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.323494e-07, 0, -0.99999994, 0, 1, 0, 9.891002, 0, -4.3711385e-08, -21.2, 1, 46.22)
+
+[node name="StaticWall30" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="60" unique_id=1037675508 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-3.0264457e-07, 0, -0.99999994, 0, 1, 0, 6.9237013, 0, -4.3711385e-08, -12, 1, 37.52)
+
+[node name="StaticWall34" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="61" unique_id=666063351 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-4.5396683e-07, 0, -0.99999994, 0, 1, 0, 10.385551, 0, -4.3711385e-08, -8, 1, 46.52)
+
+[node name="StaticWall47" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="62" unique_id=1867428338 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-2.723801e-07, 0, -0.99999994, 0, 1, 0, 6.2313313, 0, -4.3711385e-08, 3.3000002, 1, 44.32)
+
+[node name="StaticWall35" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="63" unique_id=977620477 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-1.9066606e-07, 0, -0.99999994, 0, 1, 0, 4.361932, 0, -4.3711385e-08, -17, 1, 43.32)
+
+[node name="StaticWall37" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="64" unique_id=1836836083 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-3.1777677e-07, 0, -0.99999994, 0, 1, 0, 7.2698865, 0, -4.3711385e-08, -17, 1, 53.52)
+
+[node name="StaticWall32" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="65" unique_id=634380410 groups=["blue_mask_active"] instance=ExtResource("2_rgp34")]
+transform = Transform3D(-3.0264457e-07, 0, -0.99999994, 0, 1, 0, 6.9237013, 0, -4.3711385e-08, -19, 1, 32.52)
+
+[node name="StaticWall11" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="66" unique_id=1397568214 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-7.5850767e-07, 0, -1, 0, 1, 0, 17.352633, 0, -4.371139e-08, 0, 1, -32.48)
 
-[node name="StaticWall10" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="25" unique_id=336818366 instance=ExtResource("2_rgp34")]
+[node name="StaticWall10" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="67" unique_id=336818366 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-4.826867e-07, 0, -1, 0, 1, 0, 11.042584, 0, -4.371139e-08, 8, 1, -29.48)
 
-[node name="StaticWall18" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="26" unique_id=1085525304 instance=ExtResource("2_rgp34")]
+[node name="StaticWall18" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="68" unique_id=1085525304 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-4.826867e-07, 0, -1, 0, 1, 0, 11.042584, 0, -4.371139e-08, -8, 1, -29.48)
 
-[node name="StaticWall7" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="27" unique_id=1456723938 instance=ExtResource("2_rgp34")]
+[node name="StaticWall7" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="69" unique_id=1456723938 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-1.3239406e-07, 0, -1, 0, 1, 0, 3.0288236, 0, -4.371139e-08, 8.000001, 1, -22.77512)
 
-[node name="StaticWall8" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="28" unique_id=1285602438 instance=ExtResource("2_rgp34")]
+[node name="StaticWall8" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="70" unique_id=1285602438 instance=ExtResource("2_rgp34")]
 transform = Transform3D(-1.3239406e-07, 0, -1, 0, 1, 0, 3.0288236, 0, -4.371139e-08, 8.000001, 1, -9.77512)
 
-[node name="MaskPlatform" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="29" unique_id=246500870 instance=ExtResource("4_qjjkf")]
+[node name="MaskPlatform" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="71" unique_id=246500870 instance=ExtResource("4_qjjkf")]
 transform = Transform3D(13.79448, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
 Color = Color(1, 0.3625194, 0.34284166, 1)
 
-[node name="MaskPlatform2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="30" unique_id=1286853938 instance=ExtResource("4_qjjkf")]
+[node name="MaskPlatform4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="72" unique_id=19371356 groups=["blue_mask_active"] instance=ExtResource("4_qjjkf")]
+transform = Transform3D(15.932624, 0, 0, 0, 1, 0, 0, 0, 1, -16.400002, 1, 8)
+MaskId = 4
+Color = Color(0.24705882, 1, 0.28235295, 1)
+
+[node name="MaskPlatform2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="73" unique_id=1286853938 instance=ExtResource("4_qjjkf")]
 transform = Transform3D(-4.220831e-07, 0, 1, 0, 1, 0, -9.6561365, 0, -4.371139e-08, 8, 1, -16.25)
 MaskId = 2
 Color = Color(6.7383053e-06, 0.7736552, 0.98580045, 1)
 
-[node name="Mask" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="31" unique_id=2011242650 instance=ExtResource("3_3vc1l")]
+[node name="MaskPlatform3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="74" unique_id=790487951 groups=["blue_mask_active"] instance=ExtResource("4_qjjkf")]
+transform = Transform3D(-2.5324988e-07, 0, 1, 0, 1, 0, -5.793682, 0, -4.371139e-08, -8, 1, 11.465)
+MaskId = 3
+Color = Color(0.99999994, 0.87981683, 0.14143723, 1)
+
+[node name="Mask" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="75" unique_id=2011242650 groups=["masks"] instance=ExtResource("3_3vc1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
 Color = Color(1, 0.3625194, 0.34284166, 1)
 
-[node name="Mask2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="32" unique_id=2029060828 instance=ExtResource("3_3vc1l")]
+[node name="Mask3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="76" unique_id=1462440448 groups=["blue_mask_active"] instance=ExtResource("3_3vc1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 11)
+Id = 3
+Color = Color(0.99999994, 0.87981683, 0.14143723, 1)
+
+[node name="Mask2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="77" unique_id=2029060828 groups=["masks"] instance=ExtResource("3_3vc1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -33)
 Id = 2
 Color = Color(6.7383053e-06, 0.7736552, 0.98580045, 1)
 
-[node name="CapsuleCorner" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="33" unique_id=469969119 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="78" unique_id=469969119 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 8)
 
-[node name="CapsuleCorner2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="34" unique_id=1586285929 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="79" unique_id=1586285929 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 8)
 
-[node name="CapsuleCorner3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="35" unique_id=246103709 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="80" unique_id=246103709 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -8)
 
-[node name="CapsuleCorner4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="36" unique_id=310952826 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="81" unique_id=310952826 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -8)
 
-[node name="CapsuleCorner5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="37" unique_id=400557914 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="82" unique_id=400557914 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -24)
 
-[node name="CapsuleCorner7" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="38" unique_id=2107244518 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner7" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="83" unique_id=2107244518 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -41)
 
-[node name="CapsuleCorner8" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="39" unique_id=1676262150 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner8" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="84" unique_id=1676262150 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -41)
 
-[node name="CapsuleCorner9" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="40" unique_id=1509772424 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner9" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="85" unique_id=1509772424 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -41)
 
-[node name="CapsuleCorner10" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="41" unique_id=798338359 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner10" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="86" unique_id=798338359 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -25)
 
-[node name="CapsuleCorner11" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="42" unique_id=312747918 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner11" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="87" unique_id=312747918 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -41)
 
-[node name="CapsuleCorner12" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="43" unique_id=1562648703 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner12" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="88" unique_id=1562648703 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -25)
 
-[node name="CapsuleCorner13" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="44" unique_id=1271515993 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner13" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="89" unique_id=1271515993 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -8)
 
-[node name="CapsuleCorner14" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="45" unique_id=1273244377 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner14" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="90" unique_id=1273244377 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 8)
 
-[node name="CapsuleCorner15" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="46" unique_id=1659466288 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner15" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="91" unique_id=1659466288 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 25)
 
-[node name="CapsuleCorner16" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="47" unique_id=1659375700 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner16" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="92" unique_id=1659375700 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 25)
 
-[node name="CapsuleCorner6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="48" unique_id=1215151305 instance=ExtResource("6_l2e55")]
+[node name="CapsuleCorner18" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="93" unique_id=821599310 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 25)
+
+[node name="CapsuleCorner20" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="94" unique_id=1663544432 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 41)
+
+[node name="CapsuleCorner21" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="95" unique_id=902925556 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 41)
+
+[node name="CapsuleCorner22" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="96" unique_id=476513355 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 57)
+
+[node name="CapsuleCorner24" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="97" unique_id=524764681 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 57)
+
+[node name="CapsuleCorner25" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="98" unique_id=1038090717 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 41)
+
+[node name="CapsuleCorner23" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="99" unique_id=271684717 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 57)
+
+[node name="CapsuleCorner19" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="100" unique_id=588563732 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 8)
+
+[node name="CapsuleCorner26" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="101" unique_id=26344635 groups=["green_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -8)
+
+[node name="CapsuleCorner17" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="102" unique_id=1460396021 groups=["blue_mask_active"] instance=ExtResource("6_l2e55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 25)
+
+[node name="CapsuleCorner6" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="103" unique_id=1215151305 instance=ExtResource("6_l2e55")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -24)
 
-[node name="TrapMask" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="49" unique_id=1200175374 instance=ExtResource("7_golvy")]
+[node name="TrapMask" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="104" unique_id=1200175374 groups=["masks"] instance=ExtResource("7_golvy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -34)
 Color = Color(6.7383053e-06, 0.7736552, 0.98580045, 1)
 
-[node name="BlueMask" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="50" unique_id=159347240]
+[node name="TrapMask2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="105" unique_id=80501367 groups=["blue_mask_active", "masks"] instance=ExtResource("7_golvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 31)
+Color = Color(6.7383053e-06, 0.7736552, 0.98580045, 1)
+
+[node name="TrapMask3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="106" unique_id=1539063883 groups=["blue_mask_active", "masks"] instance=ExtResource("7_golvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 43)
+Color = Color(0.7496504, 0.2739621, 0.22837213, 1)
+
+[node name="TrapMask4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="107" unique_id=864269745 groups=["blue_mask_active", "masks"] instance=ExtResource("7_golvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 54)
+Color = Color(0.86168504, 0.825771, 0, 1)
+
+[node name="BlueMask" type="Node" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="108" unique_id=159347240]
 unique_name_in_owner = true
 
 [node name="Floor3" parent="WorldEnvironment/BlueMask" index="0" unique_id=870787365 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
@@ -173,8 +368,75 @@ transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 16.5, 0, -16.5)
 [node name="Floor4" parent="WorldEnvironment/BlueMask" index="1" unique_id=1134152183 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
 transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, 16.5, 0, 16.5)
 
-[node name="MaskToggleBlock" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="51" unique_id=2065720281 groups=["toggles"] instance=ExtResource("9_yj0kh")]
+[node name="Floor7" parent="WorldEnvironment/BlueMask" index="2" unique_id=1131091825 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -16.5, 0, 16.5)
+
+[node name="Floor13" parent="WorldEnvironment/BlueMask" index="3" unique_id=1853873629 groups=["green_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(0.22, 0, 0, 0, 1, 0, 0, 0, 0.22, -21.999998, 0, 0.40000004)
+
+[node name="Floor14" parent="WorldEnvironment/BlueMask" index="4" unique_id=2017982279 groups=["green_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(0.22, 0, 0, 0, 1, 0, 0, 0, 0.22, -11.399998, 0, 0.6)
+
+[node name="Floor12" parent="WorldEnvironment/BlueMask" index="5" unique_id=1552166365 groups=["green_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -16.5, 0, -16.5)
+
+[node name="Floor15" parent="WorldEnvironment/BlueMask" index="6" unique_id=2038887715 groups=["green_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -73.5, 0, -16.5)
+
+[node name="Floor8" parent="WorldEnvironment/BlueMask" index="7" unique_id=922479706 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -16.5, 0, 32.5)
+
+[node name="Floor9" parent="WorldEnvironment/BlueMask" index="8" unique_id=1924777236 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -16.5, 0, 48.5)
+
+[node name="Floor10" parent="WorldEnvironment/BlueMask" index="9" unique_id=886592351 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -0.5, 0, 48.5)
+
+[node name="Floor11" parent="WorldEnvironment/BlueMask" index="10" unique_id=1172825052 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -0.5, 0, 32.5)
+
+[node name="Floor5" parent="WorldEnvironment/BlueMask" index="11" unique_id=486944725 groups=["blue_mask_active"] instance=ExtResource("5_4w8hf")]
+transform = Transform3D(1.1, 0, 0, 0, 1, 0, 0, 0, 0.22, 0.5, 0, 23.5)
+
+[node name="MaskToggleBlock" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="109" unique_id=2065720281 groups=["blue_mask_active", "toggles"] instance=ExtResource("9_yj0kh")]
 transform = Transform3D(3.268, 0, 0, 0, 1, 0, 0, 0, 16.298, 20, 0, -0.065)
 Color = Color(1, 0.3625194, 0.34284166, 1)
+Transparency = true
 
+[node name="MaskToggleBlock2" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="110" unique_id=1600168703 groups=["blue_mask_active", "toggles"] instance=ExtResource("9_yj0kh")]
+transform = Transform3D(3.268, 0, 0, 0, 1, 0, 0, 0, 9.12688, 0, 0, 17.25)
+MaskId = 2
+Color = Color(6.7383053e-06, 0.7736552, 0.98580045, 1)
+
+[node name="MaskToggleBlock3" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="111" unique_id=964632252 groups=["green_mask_active", "toggles"] instance=ExtResource("9_yj0kh")]
+transform = Transform3D(3.268, 0, 0, 0, 1, 0, 0, 0, 6.388816, -22, 0, 5.25)
+Color = Color(1, 0.3625194, 0.34284166, 1)
+Transparency = true
+
+[node name="MaskToggleBlock5" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="112" unique_id=559182253 groups=["green_mask_active", "toggles"] instance=ExtResource("9_yj0kh")]
+transform = Transform3D(3.268, 0, 0, 0, 1, 0, 0, 0, 7.0276976, -11.5, 0, -4.55)
+MaskId = 4
+Color = Color(0.24705882, 1, 0.28235295, 1)
+Transparency = true
+
+[node name="MaskToggleBlock4" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="113" unique_id=267550148 groups=["green_mask_active", "toggles"] instance=ExtResource("9_yj0kh")]
+transform = Transform3D(7.3203197, 0, 0, 0, 1, 0, 0, 0, 3.194408, -16.699999, 0, 0.45)
+MaskId = 3
+Color = Color(0.99999994, 0.87981683, 0.14143723, 1)
+Transparency = true
+
+[node name="Exit" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="114" unique_id=92727374 groups=["green_mask_active"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.5, -23)
+
+[node name="MaskPart1" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="115" unique_id=362166686 groups=["blue_mask_active", "masks"] instance=ExtResource("10_1xfgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, 54)
+
+[node name="Label3D" type="Label3D" parent="WorldEnvironment" parent_id_path=PackedInt32Array(1489800612) index="116" unique_id=1766517595]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -74, 0.6, -21)
+text = "Поздравления! Вие излязохте от лабиринта!"
+font_size = 96
+
+[connection signal="MaskReceived" from="." to="." method="ActivatePlatforms"]
+[connection signal="MaskReceived" from="." to="." method="MaskReceived"]
 [connection signal="MaskReceived" from="WorldEnvironment/Mask2" to="." method="BlueMaskActivated"]
+[connection signal="ExitEntered" from="WorldEnvironment/Exit" to="." method="OnExitEntered"]

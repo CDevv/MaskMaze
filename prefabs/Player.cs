@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 public partial class Player : CharacterBody3D
 {
+	public const int MaskPartCount = 3;
 	public const float Speed = 5.0f;
-	public const float JumpVelocity = 4.5f;
 
 	[Signal] public delegate void WornMaskChangedEventHandler(int mask);
 	public Maze Scene { get; set; }
 	public HashSet<int> MaskInventory { get; private set; } = new();
 	public Godot.Collections.Array<int> WornMasks { get; private set; } = new();
+	public HashSet<int> MaskParts { get; private set; } = new();
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -20,12 +21,6 @@ public partial class Player : CharacterBody3D
 		if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float)delta;
-		}
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-			velocity.Y = JumpVelocity;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
@@ -54,7 +49,8 @@ public partial class Player : CharacterBody3D
 
 		if (Position.Y <= -5)
 		{
-			Position = Game.Instance.Maze.StartPos.Position;
+			Reset();
+			Game.Instance.Maze.UI.HideAllItems();
 		}
 	}
 
@@ -101,10 +97,24 @@ public partial class Player : CharacterBody3D
 		EmitSignal(SignalName.WornMaskChanged, mask);
 	}
 
+	public void AddMaskPart(int part)
+	{
+		MaskParts.Add(part);
+	}
+
+	public bool HasAllParts()
+	{
+		return MaskParts.Count == MaskPartCount;
+	}
+
 	public void Reset()
 	{
 		MaskInventory.Clear();
 		WornMasks.Clear();
 		Position = Game.Instance.Maze.StartPos.Position;
+		
+		Game.Instance.Maze.DeactivatePlatforms();
+		Game.Instance.Maze.ShowMasks();
+		Game.Instance.Maze.HideSpecial();
 	}
 }

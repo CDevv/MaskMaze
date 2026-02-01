@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dcx0hiujq8onj"]
+
+[ext_resource type="Script" uid="uid://5fom6qr11d3s" path="res://prefabs/MaskPart.cs" id="1_doqry"]
+[ext_resource type="PackedScene" uid="uid://bu3a3335h54x4" path="res://prefabs/mask_1.tscn" id="2_doqry"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doqry"]
+size = Vector3(1, 0.1, 1)
+
+[node name="MaskPart1" type="Area3D" unique_id=362166686]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_doqry")
+Id = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2082997467]
+shape = SubResource("BoxShape3D_doqry")
+
+[node name="mask1" parent="CollisionShape3D" unique_id=752115423 instance=ExtResource("2_doqry")]
+transform = Transform3D(-2.1855692e-08, 2.1855694e-08, 0.5, 0.5, 0, 2.1855694e-08, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]

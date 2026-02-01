@@ -29,6 +29,6 @@ public partial class Mask : Area3D
 		Game.Instance.Maze.ActivatePlatforms(Id);
 		Game.Instance.Maze.UI.ShowItem(Id);
 		EmitSignal(SignalName.MaskReceived);
-		QueueFree();
+		Hide();
 	}
 }

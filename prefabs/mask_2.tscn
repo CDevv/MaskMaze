@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnmcytjqmxl8k"]
+
+[ext_resource type="PackedScene" uid="uid://bvl1335b1c0qj" path="res://models/mask2.fbx" id="1_v76f4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3whea"]
+albedo_color = Color(0.24705882, 1, 0.28235295, 1)
+
+[node name="mask2" unique_id=1548181091 instance=ExtResource("1_v76f4")]
+
+[node name="Cube" parent="." index="0" unique_id=1680535232]
+surface_material_override/0 = SubResource("StandardMaterial3D_3whea")

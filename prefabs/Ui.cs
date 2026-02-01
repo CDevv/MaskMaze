@@ -3,10 +3,21 @@ using System;
 
 public partial class Ui : CanvasLayer
 {
+	public Panel MaskPartPanel { get; private set; }
+
+	public Panel ResetPanel { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		MaskPartPanel = GetNode<Panel>("MaskPartPanel");
+		ResetPanel = GetNode<Panel>("ResetPanel");
+		
 		HideAllItems();
+		MaskPartPanel.Hide();
+		foreach (Node n in GetTree().GetNodesInGroup("mask_parts"))
+		{
+			n.Call(Sprite2D.MethodName.Hide);
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,5 +72,38 @@ public partial class Ui : CanvasLayer
 				item.ToggleSelectBorder(!value);
 			}
 		}
+	}
+
+	public void ShowMaskPartsPanel()
+	{
+		
+		MaskPartPanel.Show();
+	}
+
+	public void HideMaskPartsPanel()
+	{
+		MaskPartPanel.Hide();
+	}
+
+	public void ShowMaskPart(int id)
+	{
+		GetNode<Sprite2D>("MaskPartPanel/" + id.ToString()).Visible = true;
+	}
+
+	public void ShowVictory()
+	{
+		ResetPanel.Show();
+	}
+
+	public void HideVictory()
+	{
+		ResetPanel.Hide();
+	}
+	
+	public void OnReset()
+	{
+		HideAllItems();
+		Game.Instance.Maze.Player.Reset();
+		HideVictory();
 	}
 }

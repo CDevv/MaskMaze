@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://de6y1y4n5nl80" path="res://prefabs/mask_item.tscn" id="1_8bix8"]
 [ext_resource type="Texture2D" uid="uid://cluyw5dp3bvre" path="res://sprites/blue_mask.png" id="2_tok3d"]
 [ext_resource type="Texture2D" uid="uid://dmt30hpqcn6v2" path="res://sprites/red_mask.png" id="3_5n4f5"]
+[ext_resource type="Texture2D" uid="uid://cdpv3n83kr8q3" path="res://sprites/yellow_mask.png" id="5_yfth8"]
+[ext_resource type="Texture2D" uid="uid://bivcy5hwyvfmd" path="res://sprites/green_mask.png" id="6_0q3i8"]
+[ext_resource type="Texture2D" uid="uid://ce8qfwdxv0kro" path="res://sprites/mask_part_1.png" id="6_7ajvv"]
+[ext_resource type="Texture2D" uid="uid://bjkn7uptga3wo" path="res://sprites/mask_part_2.png" id="7_0q3i8"]
+[ext_resource type="Texture2D" uid="uid://dqgy1w0lrv6s7" path="res://sprites/mask_part_3.png" id="8_bkynp"]
 
 [node name="UI" type="CanvasLayer" unique_id=2083285141]
 follow_viewport_enabled = true
@@ -19,6 +24,43 @@ offset_right = 256.0
 Sprite = ExtResource("2_tok3d")
 Id = 2
 
+[node name="3" parent="." unique_id=1866925026 instance=ExtResource("1_8bix8")]
+offset_left = 256.0
+offset_right = 384.0
+Sprite = ExtResource("5_yfth8")
+Id = 3
+
+[node name="4" parent="." unique_id=1952176518 instance=ExtResource("1_8bix8")]
+offset_left = 384.0
+offset_right = 512.0
+Sprite = ExtResource("6_0q3i8")
+Id = 4
+
+[node name="MaskPartPanel" type="Panel" parent="." unique_id=1057192782]
+offset_left = 992.0
+offset_right = 1150.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="1" type="Sprite2D" parent="MaskPartPanel" unique_id=483739053 groups=["mask_parts"]]
+texture_filter = 3
+position = Vector2(80, 64)
+scale = Vector2(7, 7)
+texture = ExtResource("6_7ajvv")
+
+[node name="2" type="Sprite2D" parent="MaskPartPanel" unique_id=621523877 groups=["mask_parts"]]
+texture_filter = 3
+position = Vector2(80, 64)
+scale = Vector2(7, 7)
+texture = ExtResource("7_0q3i8")
+
+[node name="3" type="Sprite2D" parent="MaskPartPanel" unique_id=762019010 groups=["mask_parts"]]
+texture_filter = 3
+position = Vector2(80, 64)
+scale = Vector2(7, 7)
+texture = ExtResource("8_bkynp")
+
 [node name="Panel" type="Panel" parent="." unique_id=427658143]
 offset_left = 8.0
 offset_top = 584.0
@@ -31,3 +73,39 @@ offset_right = 248.0
 offset_bottom = 56.0
 text = "Може да си сменяте
 маската чрез клавиш 1 до 9!"
+
+[node name="Label" type="Label" parent="." unique_id=1921148189]
+offset_left = 256.0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="ResetPanel" type="Panel" parent="." unique_id=397075871]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -112.0
+offset_right = 194.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RestartButton" type="Button" parent="ResetPanel" unique_id=2059591480]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -36.0
+offset_right = 72.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Започни наново"
+
+[connection signal="pressed" from="ResetPanel/RestartButton" to="." method="OnReset"]

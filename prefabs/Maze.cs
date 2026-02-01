@@ -3,6 +3,7 @@ using System;
 
 public partial class Maze : Node3D
 {
+	[Signal] public delegate void MaskReceivedEventHandler(int maskId);
 	public Player Player { get; private set; }
 	public Camera3D Camera { get; private set; }
 	public DirectionalLight3D Light { get; private set; }
@@ -40,11 +41,32 @@ public partial class Maze : Node3D
 		Light.Position = lightPos;
 	}
 
+	private void OnExitEntered()
+	{
+		GD.Print("Exited");
+	}
+
 	public void ActivatePlatforms(int maskId)
 	{
 		foreach (var platform in GetTree().GetNodesInGroup("platforms"))
 		{
 			platform.EmitSignal("Activated", maskId);
+		}
+	}
+
+	public void DeactivatePlatforms()
+	{
+		foreach (var platform in GetTree().GetNodesInGroup("platforms"))
+		{
+			platform.Call(MaskPlatform.MethodName.Show);
+		}
+	}
+
+	public void ShowMasks()
+	{
+		foreach (var node in GetTree().GetNodesInGroup("masks"))
+		{
+			node.Call(Node3D.MethodName.Show);
 		}
 	}
 
@@ -61,7 +83,15 @@ public partial class Maze : Node3D
 	{
 		foreach (var node in GetTree().GetNodesInGroup(group))
 		{
-			node.Set("visible", true);
+			node.Call(Node3D.MethodName.Show);
 		}
 	}
+
+	public void WarpToEnd()
+	{
+		var endPos = GetNode<Marker3D>("EndPos").Position;
+		Player.Position = endPos;
+	}
+	
+	public virtual void HideSpecial() {}
 }
