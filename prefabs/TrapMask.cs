@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-public partial class Mask : Area3D
+public partial class TrapMask : Area3D
 {
-	[Signal] public delegate void MaskReceivedEventHandler();
 	[Export] public int Id { get; set; } = 1;
 	[Export] public Color Color { get; set; } = Colors.Wheat;
 	public MeshInstance3D Mesh { get; private set; }
@@ -12,7 +11,6 @@ public partial class Mask : Area3D
 	public override void _Ready()
 	{
 		Mesh = GetNode<MeshInstance3D>("%Mesh");
-		
 		Mesh.GetSurfaceOverrideMaterial(0).Set(StandardMaterial3D.PropertyName.AlbedoColor, Color);
 	}
 
@@ -24,11 +22,7 @@ public partial class Mask : Area3D
 	private void OnAreaEntered(Area3D area)
 	{
 		if (area.Name != "PlayerMaskArea") return;
-		Game.Instance.Player.AddMask(Id);
-		GD.Print("Mask ", Id, " given");
-		Game.Instance.Maze.ActivatePlatforms(Id);
-		Game.Instance.Maze.UI.ShowItem(Id);
-		EmitSignal(SignalName.MaskReceived);
-		QueueFree();
+		Game.Instance.Player.Reset();
+		Game.Instance.Maze.UI.HideAllItems();
 	}
 }

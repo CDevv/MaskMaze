@@ -2,25 +2,27 @@
 
 [ext_resource type="Script" uid="uid://biybpkmgje20j" path="res://Maze.cs" id="1_jj3l7"]
 [ext_resource type="PackedScene" uid="uid://dbdkhuo4ar0kg" path="res://prefabs/player.tscn" id="2_05vpw"]
+[ext_resource type="PackedScene" uid="uid://bl2wulxlpex5h" path="res://prefabs/ui.tscn" id="2_vt813"]
+[ext_resource type="PackedScene" uid="uid://bjr3n8lh48np0" path="res://prefabs/floor.tscn" id="3_o6dax"]
 
 [sub_resource type="Environment" id="Environment_jj3l7"]
 glow_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jj3l7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jj3l7"]
-size = Vector3(15, 1, 15)
-
-[sub_resource type="BoxMesh" id="BoxMesh_05vpw"]
-
 [node name="Maze" type="Node3D" unique_id=1313152877]
 script = ExtResource("1_jj3l7")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1982951477]
-
 [node name="Camera" type="Camera3D" parent="." unique_id=1700555575]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 2.1855698e-08)
 current = true
+
+[node name="UI" parent="." unique_id=2083285141 instance=ExtResource("2_vt813")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2061225722]
+
+[node name="StartPos" type="Marker3D" parent="." unique_id=1952551819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489800612]
 environment = SubResource("Environment_jj3l7")
@@ -30,16 +32,12 @@ camera_attributes = SubResource("CameraAttributesPractical_jj3l7")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Floor" type="StaticBody3D" parent="WorldEnvironment" unique_id=1908581345]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Floor" unique_id=476521991]
-shape = SubResource("BoxShape3D_jj3l7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Floor" unique_id=1222054849]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
-mesh = SubResource("BoxMesh_05vpw")
-
 [node name="MainLight" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=591369642]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)
 shadow_enabled = true
+
+[node name="Floor" parent="WorldEnvironment" unique_id=469892674 instance=ExtResource("3_o6dax")]
+
+[node name="Exit" type="StaticBody3D" parent="WorldEnvironment" unique_id=613433320]
+unique_name_in_owner = true

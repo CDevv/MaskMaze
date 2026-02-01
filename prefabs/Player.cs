@@ -7,8 +7,10 @@ public partial class Player : CharacterBody3D
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 
+	[Signal] public delegate void WornMaskChangedEventHandler(int mask);
 	public Maze Scene { get; set; }
 	public HashSet<int> MaskInventory { get; private set; } = new();
+	public Godot.Collections.Array<int> WornMasks { get; private set; } = new();
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -49,6 +51,25 @@ public partial class Player : CharacterBody3D
 		camPos.X = Position.X;
 		camPos.Z = Position.Z;
 		Scene.Camera.Position = camPos;
+
+		if (Position.Y <= -5)
+		{
+			Position = Game.Instance.Maze.StartPos.Position;
+		}
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
+		if (@event is InputEventKey eventKey && eventKey.Pressed)
+		{
+			if (eventKey.Keycode >= Key.Key1 && eventKey.Keycode <= Key.Key9)
+			{
+				long num = (eventKey.Keycode - Key.Key1) + 1;
+				GD.Print(num);
+				WearMask((int)num);
+			}
+		}
 	}
 
 	public bool HasMask(int mask)
@@ -59,5 +80,31 @@ public partial class Player : CharacterBody3D
 	public void AddMask(int mask)
 	{
 		MaskInventory.Add(mask);
+		WornMasks.Clear();
+		WornMasks.Add(mask);
+		
+		EmitSignal(SignalName.WornMaskChanged, mask);
+	}
+
+	public int GetWornMask()
+	{
+		return WornMasks[0];
+	}
+
+	public void WearMask(int mask)
+	{
+		WornMasks.Clear();
+		WornMasks.Add(mask);
+		
+		Scene.UI.ToggleSelectBorder(true, mask);
+		
+		EmitSignal(SignalName.WornMaskChanged, mask);
+	}
+
+	public void Reset()
+	{
+		MaskInventory.Clear();
+		WornMasks.Clear();
+		Position = Game.Instance.Maze.StartPos.Position;
 	}
 }

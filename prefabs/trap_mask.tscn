@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://0q0ptbf25kcs"]
+[gd_scene format=4 uid="uid://d0xxumvdnk5jc"]
 
-[ext_resource type="Script" uid="uid://lj6d0xa7d7ku" path="res://prefabs/Mask.cs" id="1_tookm"]
-[ext_resource type="Material" uid="uid://xshcq3p0ri4c" path="res://new_standard_material_3d.tres" id="3_nnpcs"]
+[ext_resource type="Script" uid="uid://cjmj3q0jlr311" path="res://prefabs/TrapMask.cs" id="1_b620s"]
+[ext_resource type="Material" uid="uid://xshcq3p0ri4c" path="res://new_standard_material_3d.tres" id="2_ps442"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nnpcs"]
 size = Vector3(1, 8.959595, 0.083496094)
@@ -29,7 +29,7 @@ _surfaces = [{
 "index_count": 204,
 "index_data": PackedByteArray("LgAvABUAFQAvABYAAAABAAIAAgABAAMAIwAwABoAGgAwABsAIwAxADAAJAAxACMAJAAyADEAMwAyACQAMwAZADIANAAZADMANAAmABkANQAmADQANQA2ACYAJQA2ADUAJQA3ADYAOAA3ACUAOAAYADcAFwAYADgAOQA6AAYABgA6AAUAOwA8AAoACgA8AAwAOwA9ADwAKQA9ADsAKQALAD0APgALACkAPgAqAAsAPwAqAD4APwBAACoAKwBAAD8AKwBBAEAALABBACsALABCAEEALQBCACwALQANAEIADgANAC0ADwAQABEAEQAQABIAQwBEACgAKABEAAcARQAeAEYARQBHAB4ASABHAEUARgAeAEkARgBJAEoASgBJAEsASgBLABwAHABLAB0ABAAnAEwATAAnAE0AIgAhAB8AHwAhACAATgBPAFAAUABPAFEAUgBTAFQAVABTAFUAVgBXAFgAWABXAFkAWgBbAFwAXABbAF0AXgBfAGAAYABfAGEACAAJAGIAYgAJAGMAEwAUAGQAZAAUAGUA"),
 "lods": [0.05347851, PackedByteArray("HAAWABUAHAAdABYAHAAeAB0AHwAeABwAHwAgAB4AHwAhACAAIgAhAB8AIgAUACEAEwAUACIAAAABAAIAAgABAAMAIwAbABoAJAAbACMAJAAZABsAJQAZACQAJQAmABkAJQAYACYAFwAYACUABAAFAAYABAAnAAUABAAHACcAKAAHAAQAKAAJAAcACAAJACgACgALAAwAKQALAAoAKQAqAAsAKwAqACkALAAqACsALAANACoALQANACwADgANAC0ADwAQABEAEQAQABIA"), 0.34016573, PackedByteArray("AAABAAIAAgABAAMABAAFAAYABAAHAAUACAAHAAQACAAJAAcACgALAAwACgANAAsADgANAAoADwAQABEAEQAQABIAEwAUABUAFQAUABYAFwAYABkAFwAZABoAGgAZABsA")],
-"material": ExtResource("3_nnpcs"),
+"material": ExtResource("2_ps442"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -39,11 +39,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yv1aw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1270i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b620s"]
 resource_local_to_scene = true
 
-[node name="Mask" type="Area3D" unique_id=2011242650]
-script = ExtResource("1_tookm")
+[node name="TrapMask" type="Area3D" unique_id=2011242650]
+script = ExtResource("1_b620s")
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1214671598]
 transform = Transform3D(1, 0, 0, 0, -1.8626451e-09, -1, 0, -0.100000024, 0, 0, 0, 0)
@@ -53,6 +53,6 @@ shape = SubResource("BoxShape3D_nnpcs")
 unique_name_in_owner = true
 transform = Transform3D(-4.3711385e-08, 0, -0.30421197, 0, 4.1466117, 0, 0.99999994, -8.881784e-16, -1.32975275e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_gf1v1")
-surface_material_override/0 = SubResource("StandardMaterial3D_1270i")
+surface_material_override/0 = SubResource("StandardMaterial3D_b620s")
 
 [connection signal="area_entered" from="." to="." method="OnAreaEntered"]

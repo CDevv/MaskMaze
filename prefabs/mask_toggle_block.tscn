@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ox0t2y3wg28r"]
+
+[ext_resource type="Script" uid="uid://dv16670ury3vs" path="res://prefabs/MaskToggleBlock.cs" id="1_ijwie"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0pw0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijwie"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ijwie"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ijwie")
+
+[node name="MaskToggleBlock" type="StaticBody3D" unique_id=2065720281]
+script = ExtResource("1_ijwie")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=511373248]
+shape = SubResource("BoxShape3D_c0pw0")
+
+[node name="Mesh" type="MeshInstance3D" parent="Collision" unique_id=2061289013]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_ijwie")

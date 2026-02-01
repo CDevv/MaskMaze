@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cbnjik4jes38g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fuos6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xn0g0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pxyeb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c1wp6"]
+
+[node name="CapsuleCorner" type="StaticBody3D" unique_id=469969119]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=605967997]
+shape = SubResource("BoxShape3D_fuos6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1778519732]
+mesh = SubResource("BoxMesh_xn0g0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1391478633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_pxyeb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D2" unique_id=131685289]
+mesh = SubResource("CapsuleMesh_c1wp6")

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://de6y1y4n5nl80"]
+
+[ext_resource type="Texture2D" uid="uid://cluyw5dp3bvre" path="res://sprites/blue_mask.png" id="1_6j73c"]
+[ext_resource type="Script" uid="uid://bw22re06xenw2" path="res://prefabs/MaskItem.cs" id="1_ku7mn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ku7mn"]
+font_size = 32
+shadow_size = 2
+shadow_color = Color(0.29954746, 0.29954746, 0.29954743, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku7mn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.1540452, 0.5638566, 0.5639546, 1)
+
+[node name="MaskItem" type="Panel" unique_id=1798942907 groups=["item_panels"]]
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_ku7mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338152924]
+texture_filter = 3
+position = Vector2(64, 64)
+scale = Vector2(7, 7)
+texture = ExtResource("1_6j73c")
+
+[node name="Panel" type="Panel" parent="." unique_id=1875284325]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 112.0
+offset_right = 80.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=778603480]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 37.0
+text = "1"
+label_settings = SubResource("LabelSettings_ku7mn")
+horizontal_alignment = 1
+
+[node name="SelectBorder" type="Panel" parent="." unique_id=1914881954]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 152.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ku7mn")

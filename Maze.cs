@@ -7,16 +7,25 @@ public partial class Maze : Node3D
 	public Camera3D Camera { get; private set; }
 	public DirectionalLight3D Light { get; private set; }
 	public AudioStreamPlayer Music { get; set; }
-	public Godot.Collections.Array<MaskPlatform> Platforms { get; private set; }
+	public Marker3D StartPos { get; private set; }
+	public Ui UI { get; private set; }
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		UI = GetNode<Ui>("UI");
+		StartPos = GetNode<Marker3D>("StartPos");
 		Light = GetNode<DirectionalLight3D>("%MainLight");
 		Camera = GetNode<Camera3D>("Camera");
 		Player = GetNode<Player>("%Player");
 		Music = GetNode<AudioStreamPlayer>("Music");
 		Player.Scene = this;
+
+		foreach (var node in GetTree().GetNodesInGroup("toggles"))
+		{
+			MaskToggleBlock block = (MaskToggleBlock)node;
+			Player.WornMaskChanged += block.Toggle;
+		}
 		
 		Game.Instance.Player = Player;
 		Game.Instance.Maze = this;
@@ -33,9 +42,26 @@ public partial class Maze : Node3D
 
 	public void ActivatePlatforms(int maskId)
 	{
-		foreach (var platform in GetTree().GetNodesInGroup("plat"))
+		foreach (var platform in GetTree().GetNodesInGroup("platforms"))
 		{
 			platform.EmitSignal("Activated", maskId);
+		}
+	}
+
+	public void HideGroupNodes(string group)
+	{
+		foreach (var node1 in GetTree().GetNodesInGroup(group))
+		{
+			var node = (Node3D)node1;
+			node.Set("visible", false);
+		}
+	}
+
+	public void ShowGroupNodes(string group)
+	{
+		foreach (var node in GetTree().GetNodesInGroup(group))
+		{
+			node.Set("visible", true);
 		}
 	}
 }
